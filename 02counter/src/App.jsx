@@ -5,11 +5,15 @@ function App() {
   const [counter, setCounter] = useState(15);
 
   const addValue = () => {
-    setCounter(counter + 1);
+    if (counter < 20) {
+      setCounter(counter + 1);
+    }
   };
 
   const removeValue = () => {
-    setCounter(counter - 1)
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
   };
 
   return (
@@ -18,8 +22,7 @@ function App() {
       <h2>counter value: {counter}</h2>
       <button onClick={addValue}>Increase value</button>
       <br />
-      <button
-      onClick={removeValue}>Decrease value</button>
+      <button onClick={removeValue}>Decrease value</button>
     </>
   );
 }
